@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "Pure javascript app",
   "main": "app.js",
+  "homepage": "romul3003.github.io/questions-js-app",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [
     "js",
@@ -21,5 +24,8 @@
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
+  },
+  "dependencies": {
+    "gh-pages": "^2.2.0"
   }
 }
