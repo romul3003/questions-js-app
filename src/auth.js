@@ -1,5 +1,5 @@
 export function getAuthForm() {
-	return `
+  return `
 		<form class="mui-form" id="auth-form">
 			<div class="mui-textfield mui-textfield--float-label">
 				<input type="email" id="email" required>
@@ -22,18 +22,18 @@ export function getAuthForm() {
 }
 
 export function authWithEmailAndPassword(email, password) {
-	const apiKey = 'AIzaSyBBZ3RgFKoYfe7zPIeAmQHBIvydJtqB25U'
+  const apiKey = 'AIzaSyBBZ3RgFKoYfe7zPIeAmQHBIvydJtqB25U'
 
-	return fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`, {
-		method: 'POST',
-		body: JSON.stringify({
-			email, password,
-			returnSecureToken: true
-		}),
-		headers: {
-			'Content-Type': 'application/json;charset=utf-8'
-		},
-	})
-		.then(response => response.json())
-		.then(data => data.idToken)
+  return fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`, {
+    method: 'POST',
+    body: JSON.stringify({
+      email, password,
+      returnSecureToken: true
+    }),
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+  })
+    .then(response => response.json())
+    .then(data => data.idToken)
 }
